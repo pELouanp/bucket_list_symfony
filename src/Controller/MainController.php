@@ -21,6 +21,9 @@ class MainController extends AbstractController
      */
     public function contact(): Response
     {
-        return $this->render('main/contact.html.twig');
+        $data = file_get_contents("../src/Controller/team.json");
+        $afficher = json_decode($data);
+
+        return $this->render('main/contact.html.twig', ["affiche" => $afficher]);
     }
 }

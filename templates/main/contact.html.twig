@@ -2,7 +2,21 @@
 
 {% block body %}
     <main>
-        <h4>Voici les contacts : </h4>
+        <h4>Contact</h4>
+        <div id="contact">
+            {% for info in affiche %}
+
+                <p><strong> Prénom : </strong>{{ info.firstname }}</p>
+                <p><strong>Nom : </strong>{% if info.firstname == 'Fabien' %}
+                    ❤
+                    {% endif %}{{ info.lastname }}</p>
+                <p><strong>Date de naissance : </strong>{{ info.dateOfBirth|date('d-m-Y') }}</p>
+                <p><strong>Créateur de : </strong>{{ info.creatorOf }}</p>
+                <img src="{{ info.picture }}" alt="picture of user" width="200px">
+                <p id="desc"><strong>Description : </strong>{{ info.description }}</p>
+
+            {% endfor %}
+        </div>
     </main>
 {% endblock %}
 

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <main>
+        <h4 id="wishes">Détail du souhait n°{{ wish.id }}</h4>
+        <p class="wish"><strong>Titre : </strong>{{ wish.title }}</p>
+        <p class="wish"><strong>Auteur : </strong>{{ wish.author }}</p>
+        <p class="wish"><strong>Description : </strong>{{ wish.description }}</p>
+        <p class="wish"><strong>Description : </strong>{{ wish.dateCreated|date('d/m/y H:i') }}</p>
+
+        <article id="wishes">
+            <a href="{{ path('list') }}">retour à la liste</a>
+        </article>
+    </main>
+{% endblock %}
