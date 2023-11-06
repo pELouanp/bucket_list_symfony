@@ -16,7 +16,17 @@
 </head>
 <body>
 {% include 'fragments/header.html.twig' %}
+
+{% for label,message in app.flashes %}
+    {% for messages in message %}
+        <p class="flash flash-{{ label }}">
+            {{ messages }}
+        </p>
+    {% endfor %}
+{% endfor %}
+
 {% block body %}
+
 {% endblock %}
 {% include 'fragments/footer.html.twig' %}
 </body>
