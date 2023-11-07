@@ -6,6 +6,7 @@
         <section class="wish-section">
             {% for wish in wishes %}
                 <article class="wish">
+                    <p>{{ wish.categorie }}</p>
                     <a href="{{ path('detail', {'id': wish.id}) }}">
                         {{ wish.title }}
                     </a>
